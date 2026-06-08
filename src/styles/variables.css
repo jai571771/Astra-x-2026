@@ -1,0 +1,12 @@
+:root {
+  --color-black: #0a0a0a;
+  --color-red: #E24B4A;
+  --color-blue: #378ADD;
+  --color-purple: #7F77DD;
+  --color-gold: #EF9F27;
+  
+  --shadow-red: 0 0 20px rgba(226, 75, 74, 0.6);
+  --shadow-blue: 0 0 20px rgba(55, 138, 221, 0.6);
+  --shadow-purple: 0 0 20px rgba(127, 119, 221, 0.6);
+  --shadow-gold: 0 0 20px rgba(239, 159, 39, 0.6);
+}

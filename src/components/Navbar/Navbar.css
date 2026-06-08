@@ -1,0 +1,26 @@
+/* Glowing hover effects for navbar links */
+.nav-link-glow {
+  position: relative;
+}
+
+.nav-link-glow::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #378ADD, #7F77DD);
+  opacity: 0;
+  box-shadow: 0 0 10px #378ADD;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link-glow:hover::after {
+  opacity: 1;
+}
+
+/* Glassmorphism panel styling */
+.nav-profile-shadow {
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05), 0 4px 15px rgba(0, 0, 0, 0.4);
+}
