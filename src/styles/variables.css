@@ -1,0 +1,17 @@
+:root {
+  /* Marvel-Themed Colors */
+  --space-black: 240 10% 3.9%;
+  --marvel-red: 0 76% 55%;
+  --reactor-blue: 191 100% 50%;
+  --cosmic-purple: 271 81% 53%;
+  --infinity-gold: 45 100% 50%;
+
+  /* Neutral Dark Scale */
+  --card-bg: 240 10% 6%;
+  --card-border: 240 5% 15%;
+  --text-muted: 240 5% 65%;
+  
+  /* Font Family Defaults */
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
