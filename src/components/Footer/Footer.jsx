@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaShieldAlt, FaGithub, FaInstagram, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
+import { FaSatelliteDish, FaGithub, FaInstagram, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
 
 function Footer() {
   return (
@@ -13,13 +13,13 @@ function Footer() {
         {/* Left Column: Brand */}
         <div className="space-y-4 text-center md:text-left">
           <Link to="/" className="flex items-center justify-center md:justify-start gap-2">
-            <FaShieldAlt className="text-marvel-red text-xl" />
+            <FaSatelliteDish className="text-reactor-blue text-xl" />
             <span className="font-orbitron font-black text-lg tracking-tighter text-white">
-              ASTRA <span className="text-marvel-red">X 2026</span>
+              ASTRA <span className="text-reactor-blue">X</span> <span className="text-marvel-red">2026</span>
             </span>
           </Link>
           <p className="text-xs text-gray-500 font-outfit max-w-xs leading-relaxed">
-            Earth's mightiest college symposium. A Marvel-inspired showcase of extreme innovation, tech missions, and cosmic assembly.
+            Demo flagship event website for a premium inter-college technology festival.
           </p>
         </div>
 
@@ -28,17 +28,17 @@ function Footer() {
           <h4 className="font-orbitron font-bold text-xs text-gray-300 tracking-widest">NAVIGATION</h4>
           <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-xs font-orbitron">
             <Link to="/" className="text-gray-500 hover:text-white transition-colors duration-200">HOME</Link>
-            <Link to="/missions" className="text-gray-500 hover:text-white transition-colors duration-200">MISSIONS</Link>
-            <Link to="/innovation-labs" className="text-gray-500 hover:text-white transition-colors duration-200">WORKSHOPS</Link>
-            <Link to="/allies" className="text-gray-500 hover:text-white transition-colors duration-200">SPONSORS</Link>
-            <Link to="/about" className="text-gray-500 hover:text-white transition-colors duration-200">ABOUT</Link>
-            <Link to="/contact" className="text-gray-500 hover:text-white transition-colors duration-200">CONTACT</Link>
+            <Link to="/event" className="text-gray-500 hover:text-white transition-colors duration-200">EVENT</Link>
+            <Link to="/about-us" className="text-gray-500 hover:text-white transition-colors duration-200">ABOUT US</Link>
+            <Link to="/workshop" className="text-gray-500 hover:text-white transition-colors duration-200">WORKSHOP</Link>
+            <Link to="/gallery" className="text-gray-500 hover:text-white transition-colors duration-200">GALLERY</Link>
+            <Link to="/sponsors" className="text-gray-500 hover:text-white transition-colors duration-200">SPONSORS</Link>
           </div>
         </div>
 
         {/* Right Column: Social Connection */}
         <div className="space-y-4 flex flex-col items-center md:items-end">
-          <h4 className="font-orbitron font-bold text-xs text-gray-300 tracking-widest">CONNECT WITH S.H.I.E.L.D.</h4>
+          <h4 className="font-orbitron font-bold text-xs text-gray-300 tracking-widest">CONNECT WITH ASTRA X</h4>
           <div className="flex gap-4">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-marvel-red transition-all duration-300 bg-white/5 hover:scale-110">
               <FaGithub size={14} />
@@ -54,7 +54,7 @@ function Footer() {
             </a>
           </div>
           <p className="text-[10px] text-gray-600 font-mono">
-            SECURE PROTOCOL // CLASSIFIED LEVEL 7
+            DEMO SOCIAL LINKS // UPDATE BEFORE LAUNCH
           </p>
         </div>
       </div>
@@ -62,10 +62,10 @@ function Footer() {
       {/* Bottom Footer */}
       <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
         <p className="text-[10px] text-gray-600 font-mono">
-          &copy; 2026 ASTRA X. ALL RIGHTS RESERVED. SECURED BY S.H.I.E.L.D. HELICARRIER NETWORK.
+          &copy; 2026 ASTRA X. ALL RIGHTS RESERVED.
         </p>
         <p className="text-[10px] text-gray-600 font-mono italic">
-          "Part of the journey is the end."
+          Demo build ready for final content.
         </p>
       </div>
     </footer>

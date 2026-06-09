@@ -82,7 +82,7 @@ function EventCard({ event }) {
             onClick={() => setShowModal(true)}
             className="w-full mt-2 py-2 rounded font-orbitron font-bold text-[10px] tracking-widest bg-white/5 hover:bg-white/10 border border-white/10 text-center transition-colors duration-200 text-white"
           >
-            LAUNCH MISSION INTEL
+            VIEW EVENT DETAILS
           </button>
         </div>
       </div>
@@ -105,7 +105,7 @@ function EventCard({ event }) {
             {/* Header */}
             <div className="space-y-1 pb-4 border-b border-white/10">
               <span className={`text-[9px] font-orbitron font-bold tracking-widest uppercase px-2 py-0.5 rounded border bg-white/5 ${config.text}`} style={{ borderColor: `${config.color}30` }}>
-                {event.category.toUpperCase()} MISSION
+                {event.category.toUpperCase()} EVENT
               </span>
               <h2 className="text-2xl md:text-3xl font-black font-orbitron tracking-wide text-white mt-2">
                 {event.title}
@@ -152,7 +152,7 @@ function EventCard({ event }) {
               <div className="space-y-2 pt-2">
                 <h4 className="font-orbitron font-bold text-xs text-white flex items-center gap-1.5">
                   <FaUserAlt size={10} className="text-marvel-red" />
-                  MISSION COMMANDERS (COORDINATORS)
+                  EVENT COORDINATORS
                 </h4>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-1">
                   {event.coordinators.map((coordinator, idx) => (
@@ -166,7 +166,7 @@ function EventCard({ event }) {
 
               {/* Secure directive */}
               <div className="bg-marvel-red/10 border border-marvel-red/20 rounded p-3 text-[10px] text-gray-400 font-mono">
-                SECURE PROTOCOL // To register for this mission, contact the commanders listed above. Report on site 15 minutes before the timeline deployment.
+                DEMO NOTE // Registration flow is a placeholder. Replace this with the final participant registration process before launch.
               </div>
             </div>
 
@@ -176,17 +176,17 @@ function EventCard({ event }) {
                 onClick={() => setShowModal(false)}
                 className="px-4 py-2 rounded bg-white/5 border border-white/10 text-xs font-orbitron hover:bg-white/10 transition-colors text-white cursor-pointer"
               >
-                ABORT INTEL
+                CLOSE
               </button>
               <a
                 href="#register"
                 onClick={() => {
-                  alert(`Registration query sent for ${event.title}! Please contact the coordinators to confirm registration.`)
+                  alert(`Demo registration query opened for ${event.title}. Replace this with the final registration flow.`)
                   setShowModal(false)
                 }}
                 className="px-4 py-2 rounded bg-marvel-red border border-marvel-red hover:bg-marvel-red/80 transition-colors text-xs font-orbitron text-white text-center font-bold"
               >
-                DEPLOY MISSION
+                REGISTER INTEREST
               </a>
             </div>
 

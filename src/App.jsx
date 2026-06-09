@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import Home from './pages/Home'
-import Missions from './pages/Missions'
-import InnovationLabs from './pages/InnovationLabs'
-import Allies from './pages/Allies'
-import About from './pages/About'
-import Contact from './pages/Contact'
+import Event from './pages/Event'
+import Workshop from './pages/Workshop'
+import Sponsors from './pages/Sponsors'
+import AboutUs from './pages/AboutUs'
+import Gallery from './pages/Gallery'
 
 // ScrollToTop component to reset scroll on route transition
 function ScrollToTop() {
@@ -21,12 +21,10 @@ function ScrollToTop() {
 }
 
 function App() {
-  // Global superhero selected profile
-  const [selectedHero, setSelectedHero] = useState({
-    name: 'Iron Man',
-    avatar: 'https://images.unsplash.com/photo-1620336655055-088d06e36bf0?w=150&auto=format&fit=crop&q=80', // iron man theme placeholder/artwork
-    color: '#E23636'
-  })
+  const eventTheme = {
+    name: 'ASTRA X',
+    color: '#00D2FF'
+  }
 
   return (
     <Router>
@@ -35,16 +33,21 @@ function App() {
         {/* Particle/Grid background overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none z-0"></div>
         
-        <Navbar selectedHero={selectedHero} setSelectedHero={setSelectedHero} />
+        <Navbar />
         
         <main className="flex-grow z-10 pt-20">
           <Routes>
-            <Route path="/" element={<Home selectedHero={selectedHero} />} />
-            <Route path="/missions" element={<Missions />} />
-            <Route path="/innovation-labs" element={<InnovationLabs />} />
-            <Route path="/allies" element={<Allies />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/" element={<Home selectedHero={eventTheme} />} />
+            <Route path="/event" element={<Event />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/workshop" element={<Workshop />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/sponsors" element={<Sponsors />} />
+            <Route path="/missions" element={<Navigate to="/event" replace />} />
+            <Route path="/innovation-labs" element={<Navigate to="/workshop" replace />} />
+            <Route path="/allies" element={<Navigate to="/sponsors" replace />} />
+            <Route path="/about" element={<Navigate to="/about-us" replace />} />
+            <Route path="/contact" element={<Navigate to="/about-us" replace />} />
           </Routes>
         </main>
         
