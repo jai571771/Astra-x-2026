@@ -51,7 +51,7 @@ function Countdown({ targetDate = '2026-08-15T09:00:00', accentColor = '#E23636'
     <div className="flex flex-col items-center justify-center p-4">
       {timeLeft.isOver ? (
         <div className="font-orbitron font-bold text-2xl text-glow-red text-marvel-red tracking-widest animate-pulse">
-          MISSION IN PROGRESS / ASSEMBLED
+          ASTRA X IS LIVE
         </div>
       ) : (
         <div className="flex gap-4 md:gap-8 flex-wrap justify-center">

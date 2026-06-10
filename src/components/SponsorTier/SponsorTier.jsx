@@ -4,22 +4,22 @@ function SponsorTier({ tierName, sponsors }) {
   // Tier color configuration
   const tierConfig = {
     vibranium: {
-      title: "VIBRANIUM ALLIES",
-      sub: "PLATINUM LEVEL SYNDICATE",
+      title: "TITLE SPONSORS",
+      sub: "PRIMARY PARTNER TIER",
       color: "#FFD700", // Gold Glow
       glowClass: "hover:shadow-gold-glow border-yellow-500/20 hover:border-yellow-400",
       textColor: "text-infinity-gold text-glow-gold"
     },
     adamantium: {
-      title: "ADAMANTIUM ALLIES",
-      sub: "GOLD LEVEL COLLABORATIVE",
+      title: "GOLD SPONSORS",
+      sub: "STRATEGIC PARTNER TIER",
       color: "#00D2FF", // Blue Glow
       glowClass: "hover:shadow-blue-glow border-reactor-blue/20 hover:border-reactor-blue",
       textColor: "text-reactor-blue text-glow-blue"
     },
     uru: {
-      title: "URU ALLIES",
-      sub: "SILVER LEVEL SUPPORTERS",
+      title: "SUPPORT PARTNERS",
+      sub: "EVENT SUPPORT TIER",
       color: "#8A2BE2", // Purple Glow
       glowClass: "hover:shadow-purple-glow border-cosmic-purple/20 hover:border-cosmic-purple",
       textColor: "text-cosmic-purple text-glow-purple"
@@ -86,7 +86,7 @@ function SponsorTier({ tierName, sponsors }) {
               className="mt-4 font-mono text-[9px] tracking-wider uppercase font-semibold transition-all duration-300 group-hover:underline opacity-60 group-hover:opacity-100"
               style={{ color: currentTier.color }}
             >
-              Portal Link &rarr;
+              Partner Link &rarr;
             </span>
           </a>
         ))}
