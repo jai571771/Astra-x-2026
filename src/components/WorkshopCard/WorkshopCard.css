@@ -1,0 +1,326 @@
+/* ==========================================================================
+   AstraX Sanctum System: Marble & Infinity Stones Styling
+   ========================================================================== */
+
+/* 1. Base Marble Page Surface with Slow Flow */
+.marble-surface {
+  position: relative;
+  background-color: #020206;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(20, 25, 45, 0.4), transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(15, 30, 50, 0.25), transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(30, 15, 40, 0.2), transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200' viewBox='0 0 1200 1200'%3E%3Cpath d='M-100,200 Q200,100 400,350 T800,450 T1300,300' fill='none' stroke='rgba%28212, 175, 55, 0.06%29' stroke-width='1.5' /%3E%3Cpath d='M400,0 Q600,300 300,600 T900,900 T1300,1200' fill='none' stroke='rgba%28212, 175, 55, 0.03%29' stroke-width='1' /%3E%3Cpath d='M-50,800 Q300,850 500,1000 T1100,1100' fill='none' stroke='rgba%28212, 175, 55, 0.04%29' stroke-width='1.2' /%3E%3Cpath d='M200,-50 Q100,300 500,500 T900,1250' fill='none' stroke='rgba%28255, 255, 255, 0.02%29' stroke-width='2.2' /%3E%3Cpath d='M1000,0 Q800,400 950,700 T200,1250' fill='none' stroke='rgba%28255, 255, 255, 0.03%29' stroke-width='1.5' /%3E%3Cpath d='M400,350 L430,370 L420,410 L460,430' fill='none' stroke='rgba%28212, 175, 55, 0.04%29' stroke-width='0.8' /%3E%3Cpath d='M300,600 L270,640 L290,670' fill='none' stroke='rgba%28255, 255, 255, 0.015%29' stroke-width='0.7' /%3E%3Cpath d='M900,900 L930,880 L920,850 L950,830' fill='none' stroke='rgba%28212, 175, 55, 0.03%29' stroke-width='0.8' /%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  animation: marble-flow 180s linear infinite;
+  overflow-x: hidden;
+}
+
+@keyframes marble-flow {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 4% 2%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Polished Sheen Reflection */
+.marble-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.06;
+  background: linear-gradient(135deg, transparent 35%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.3) 55%, transparent 65%);
+  background-size: 300% 300%;
+  animation: slow-sheen 25s ease-in-out infinite;
+}
+
+@keyframes slow-sheen {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* 2. Orbiting Stones Entrance & Track System */
+@keyframes orbit {
+  from {
+    transform: rotate(var(--rot-offset, 0deg));
+  }
+  to {
+    transform: rotate(calc(var(--rot-offset, 0deg) + 360deg));
+  }
+}
+
+@keyframes orbit-converge {
+  from {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.orbit-track-container {
+  animation: orbit-converge 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 3. Gold Metallic Embossed Styling */
+.gold-embossed {
+  background: linear-gradient(135deg, #ECC880 0%, #FFF3C3 25%, #E5BA5A 50%, #A27619 80%, #ECC880 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 10px rgba(229, 186, 90, 0.15));
+  animation: title-glow-breathing 6s ease-in-out infinite;
+}
+
+@keyframes title-glow-breathing {
+  0%, 100% {
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 8px rgba(229, 186, 90, 0.15));
+  }
+  50% {
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 22px rgba(229, 186, 90, 0.35));
+  }
+}
+
+/* 4. Glass-Marble Floating Artifact Cards */
+.stone-card {
+  --stone-color: #FFF;
+  --stone-glow: rgba(255, 255, 255, 0.1);
+  --stone-glow-intense: rgba(255, 255, 255, 0.3);
+  --stone-bg: rgba(255, 255, 255, 0.02);
+
+  position: relative;
+  background: rgba(6, 6, 12, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: border-color 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Base Stone Specific Variables */
+.stone-card.stone-space {
+  --stone-color: #00D2FF;
+  --stone-glow: rgba(0, 210, 255, 0.1);
+  --stone-glow-intense: rgba(0, 210, 255, 0.45);
+  --stone-bg: rgba(0, 210, 255, 0.015);
+}
+.stone-card.stone-reality {
+  --stone-color: #FF0055;
+  --stone-glow: rgba(255, 0, 85, 0.1);
+  --stone-glow-intense: rgba(255, 0, 85, 0.45);
+  --stone-bg: rgba(255, 0, 85, 0.015);
+}
+.stone-card.stone-power {
+  --stone-color: #B000FF;
+  --stone-glow: rgba(176, 0, 255, 0.1);
+  --stone-glow-intense: rgba(176, 0, 255, 0.45);
+  --stone-bg: rgba(176, 0, 255, 0.015);
+}
+.stone-card.stone-mind {
+  --stone-color: #FFD700;
+  --stone-glow: rgba(255, 215, 0, 0.1);
+  --stone-glow-intense: rgba(255, 215, 0, 0.45);
+  --stone-bg: rgba(255, 215, 0, 0.015);
+}
+.stone-card.stone-time {
+  --stone-color: #00FF66;
+  --stone-glow: rgba(0, 255, 102, 0.1);
+  --stone-glow-intense: rgba(0, 255, 102, 0.45);
+  --stone-bg: rgba(0, 255, 102, 0.015);
+}
+
+/* 5. Breathing Energy Pulse System */
+@keyframes space-pulse {
+  0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 10px var(--stone-glow), inset 0 0 8px rgba(0, 210, 255, 0.03); }
+  50% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 210, 255, 0.2), inset 0 0 12px rgba(0, 210, 255, 0.06); }
+}
+@keyframes reality-pulse {
+  0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 10px var(--stone-glow), inset 0 0 8px rgba(255, 0, 85, 0.03); }
+  50% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 0, 85, 0.2), inset 0 0 12px rgba(255, 0, 85, 0.06); }
+}
+@keyframes power-pulse {
+  0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 10px var(--stone-glow), inset 0 0 8px rgba(176, 0, 255, 0.03); }
+  50% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(176, 0, 255, 0.2), inset 0 0 12px rgba(176, 0, 255, 0.06); }
+}
+@keyframes mind-pulse {
+  0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 10px var(--stone-glow), inset 0 0 8px rgba(255, 215, 0, 0.03); }
+  50% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.2), inset 0 0 12px rgba(255, 215, 0, 0.06); }
+}
+@keyframes time-pulse {
+  0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 10px var(--stone-glow), inset 0 0 8px rgba(0, 255, 102, 0.03); }
+  50% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 102, 0.2), inset 0 0 12px rgba(0, 255, 102, 0.06); }
+}
+
+.stone-card.stone-space { animation: space-pulse 5s ease-in-out infinite; }
+.stone-card.stone-reality { animation: reality-pulse 5s ease-in-out infinite; }
+.stone-card.stone-power { animation: power-pulse 5s ease-in-out infinite; }
+.stone-card.stone-mind { animation: mind-pulse 5s ease-in-out infinite; }
+.stone-card.stone-time { animation: time-pulse 5s ease-in-out infinite; }
+
+/* Interactive Hover State Overrides */
+.stone-card:hover {
+  background: rgba(10, 10, 20, 0.65);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 25px 50px -12px var(--stone-glow-intense),
+    0 0 20px 2px rgba(229, 186, 90, 0.06),
+    inset 0 0 15px var(--stone-glow);
+}
+
+/* Speed up pulses on hover */
+.stone-card.stone-space:hover { animation-duration: 2.5s; }
+.stone-card.stone-reality:hover { animation-duration: 2.5s; }
+.stone-card.stone-power:hover { animation-duration: 2.5s; }
+.stone-card.stone-mind:hover { animation-duration: 2.5s; }
+.stone-card.stone-time:hover { animation-duration: 2.5s; }
+
+/* Card sweep border shimmer */
+.stone-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  padding: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--stone-color), rgba(229, 186, 90, 0.6), var(--stone-color), transparent);
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 5;
+}
+
+.stone-card:hover::after {
+  opacity: 1;
+  animation: border-sweep 3.5s linear infinite;
+}
+
+@keyframes border-sweep {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* Active Highlight state via Control Terminal */
+.stone-card.active-highlight {
+  box-shadow: 
+    0 0 35px 2px var(--stone-glow-intense),
+    inset 0 0 20px var(--stone-glow) !important;
+  border-color: var(--stone-color);
+  background: rgba(15, 15, 30, 0.7);
+}
+
+/* Dimmed card state when another stone is filtered */
+.stone-card-dimmed {
+  opacity: 0.22;
+  filter: grayscale(40%) blur(0.5px);
+  transform: scale(0.96) !important;
+}
+
+.stone-card-dimmed:hover {
+  opacity: 0.85;
+  filter: none;
+  transform: scale(1) !important;
+}
+
+/* 6. Mythic CTA Buttons & Click Ripple Effect */
+.stone-cta-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stone-card:hover .stone-cta-btn {
+  background: linear-gradient(135deg, #CF9E41 0%, #FFF3B3 25%, #E5BA5A 50%, #A3761A 85%, #E2BA5E 100%);
+  color: #0c0b05;
+  border-color: rgba(255, 255, 255, 0.2);
+  font-weight: 800;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 20px rgba(229, 186, 90, 0.25), 
+    0 0 12px var(--stone-glow), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.stone-cta-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px rgba(229, 186, 90, 0.4);
+}
+
+/* 7. Carved Marble Interface & Inner Glow (Command Bar) */
+.carved-console {
+  background: #040409;
+  border: 1px solid rgba(229, 186, 90, 0.12);
+  box-shadow: 
+    inset 0 3px 10px rgba(0, 0, 0, 0.9),
+    0 2px 2px rgba(255, 255, 255, 0.02);
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carved-console:focus-within {
+  border-color: rgba(229, 186, 90, 0.35);
+  box-shadow: 
+    inset 0 3px 12px rgba(0, 0, 0, 0.95),
+    0 0 20px rgba(229, 186, 90, 0.08),
+    0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* 8. Cosmic Particles Field Floating */
+.particle-element {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: #FFF;
+  opacity: 0.1;
+  mix-blend-mode: screen;
+}
+
+@keyframes float-p-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -70px) scale(1.2); }
+}
+@keyframes float-p-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-60px, 40px) scale(0.8); }
+}
+@keyframes float-p-3 {
+  0%, 100% { transform: translate(0, 0) scale(1.2); }
+  50% { transform: translate(40px, 80px) scale(1); }
+}
+
+.p-animate-1 { animation: float-p-1 25s ease-in-out infinite; }
+.p-animate-2 { animation: float-p-2 30s ease-in-out infinite; }
+.p-animate-3 { animation: float-p-3 28s ease-in-out infinite; }
+
+/* 9. Dynamic Cursor Glow Haze */
+.cursor-glow-haze {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 350px at var(--mouse-pct-x, 50%) var(--mouse-pct-y, 50%), rgba(229, 186, 90, 0.045), rgba(124, 58, 237, 0.025), transparent 70%);
+  z-index: 1;
+  will-change: background;
+}
+
+/* Parallax elements helper */
+.parallax-layer {
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
